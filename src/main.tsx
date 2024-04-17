@@ -6,7 +6,7 @@ import "./index.css";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <header></header>
-    <main>
+    <main className="h-screen flex justify-center items-center">
       <App />
     </main>
   </React.StrictMode>
