@@ -7,7 +7,7 @@ import ms from "ms";
 const apiClient = new APIClient<LocationData[]>("/geo/1.0/direct");
 
 const useGeo = () => {
-  /* const { query } = useQueryStore();
+  const { query } = useQueryStore();
   const { data, isLoading, error, refetch } = useQuery<LocationData[]>({
     queryKey: ["geo", query],
     queryFn: () =>
@@ -16,9 +16,9 @@ const useGeo = () => {
       }),
     staleTime: ms("24h"),
     refetchOnMount: false,
-  }); */
+  });
 
-  const data = sampleResponseGeoCoding;
+  /* const data = sampleResponseGeoCoding; */
 
   return { data };
 };

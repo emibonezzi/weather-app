@@ -3,10 +3,14 @@ import useQueryStore from "@/state-management/query/store";
 import SearchResult from "../components/SearchResult";
 import { Input } from "../components/ui/input";
 import { Link } from "react-router-dom";
+import useWeather from "@/hooks/useWeather";
+import useCurrentLocationStore from "@/state-management/location/store";
 
 const Homepage = () => {
   const { setQuery } = useQueryStore();
   const { data } = useGeo();
+  const { setCurrentLocation } = useCurrentLocationStore();
+  const { refetch } = useWeather();
 
   return (
     <section className="relative w-[65%]">
@@ -23,7 +27,12 @@ const Homepage = () => {
         className="absolute w-full grid grid-cols-3 gap-3 mt-5 z-[99]"
       >
         {data?.map((location) => (
-          <Link onClick={() => {}} to="/forecast">
+          <Link
+            onClick={() =>
+              setCurrentLocation({ lat: location.lat, lon: location.lon })
+            }
+            to="/forecast"
+          >
             <SearchResult
               name={location.name}
               country={location.country}

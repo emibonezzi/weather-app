@@ -5,7 +5,7 @@ import { SysData } from "./SysData";
 import { WeatherData } from "./WeatherData";
 import { WindData } from "./WindData";
 
-interface CurrentWeatherResponse {
+export interface CurrentWeatherResponse {
   coord: Coordinates;
   weather: Forecast[];
   base: string;
