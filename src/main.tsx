@@ -11,11 +11,8 @@ const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <header className="h-[50vh] flex justify-center items-center">
+      <main className="flex justify-center">
         <SearchBar />
-      </header>
-      <main className="grid grid-cols-2">
-        <App />
       </main>
       <ReactQueryDevtools />
     </QueryClientProvider>

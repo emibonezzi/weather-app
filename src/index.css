@@ -4,14 +4,13 @@
 
 body {
   font-family: "Cabin", sans-serif;
-}
-
-* {
-  outline: 1px solid;
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
 h1 {
   font-weight: bold;
+  font-size: 5em;
 }
 
 p {
