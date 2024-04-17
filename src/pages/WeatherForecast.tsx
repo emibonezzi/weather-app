@@ -1,7 +1,7 @@
 const WeatherForecast = () => {
   return (
     <section>
-      <h1>Forecast for London</h1>
+      <h1>Weather in London</h1>
     </section>
   );
 };
