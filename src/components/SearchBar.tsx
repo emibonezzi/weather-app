@@ -4,13 +4,14 @@ import useQueryStore from "@/state-management/query/store";
 
 const SearchBar = () => {
   const { query, setQuery } = useQueryStore();
-  /* const { refetch } = useGeo(query); */
+  const { refetch } = useGeo(query);
 
   return (
     <>
       <Input
         onChange={(e) => {
           setQuery(e.target.value);
+          refetch();
         }}
         className="w-[200px]"
       />
