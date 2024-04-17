@@ -2,12 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <header></header>
-    <main className="h-screen flex justify-center items-center">
-      <App />
-    </main>
+    <QueryClientProvider client={queryClient}>
+      <header></header>
+      <main className="h-screen flex justify-center items-center">
+        <App />
+      </main>
+    </QueryClientProvider>
   </React.StrictMode>
 );
