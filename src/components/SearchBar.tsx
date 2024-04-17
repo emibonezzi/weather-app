@@ -8,19 +8,18 @@ const SearchBar = () => {
   const { data } = useGeo();
 
   return (
-    <>
+    <article className="relative w-[75%]">
       <Input
-        className="w-[200px]"
         onChange={(e) => {
           setQuery(e.target.value);
         }}
       />
-      <div className="grid mt-2">
+      <div className="absolute w-full grid mt-2 z-[99]">
         {data.map((location) => (
           <SearchResult name={location.name} country={location.country} />
         ))}
       </div>
-    </>
+    </article>
   );
 };
 
