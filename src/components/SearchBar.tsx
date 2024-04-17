@@ -1,7 +1,16 @@
-import React from "react";
+import { Input } from "@/components/ui/input";
 
 const SearchBar = () => {
-  return <div>SearchBar</div>;
+  return (
+    <>
+      <Input
+        onChange={(e) => {
+          console.log(e.target.value);
+        }}
+        className="w-[200px]"
+      />
+    </>
+  );
 };
 
 export default SearchBar;
