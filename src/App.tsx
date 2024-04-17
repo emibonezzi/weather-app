@@ -5,7 +5,7 @@ import WeatherForecast from "./components/WeatherForecast";
 function App() {
   return (
     <>
-      <section className="h-[600px] w-[400px] border-4 border-blue-50 flex flex-col items-center">
+      <section className=" w-[400px] flex flex-col">
         <SearchBar />
         <WeatherForecast />
       </section>

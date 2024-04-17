@@ -1,22 +1,26 @@
+import { LocationData } from "@/entities/LocationData";
 import APIClient from "@/services/api-service";
 import useQueryStore from "@/state-management/query/store";
+import { sampleResponseGeoCoding } from "@/utils/sampleResponses";
 import { useQuery } from "@tanstack/react-query";
-const apiClient = new APIClient("/geo/1.0/direct");
 import ms from "ms";
-import { mountStoreDevtool } from "simple-zustand-devtools";
+const apiClient = new APIClient<LocationData[]>("/geo/1.0/direct");
 
-const useGeo = (query: string) => {
-  const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["geo"],
+const useGeo = () => {
+  /* const { query } = useQueryStore();
+  const { data, isLoading, error, refetch } = useQuery<LocationData[]>({
+    queryKey: ["geo", query],
     queryFn: () =>
       apiClient.getAll({
         params: { q: query, limit: 5 },
       }),
     staleTime: ms("24h"),
     refetchOnMount: false,
-  });
+  }); */
 
-  return { data, isLoading, error, refetch };
+  const data = sampleResponseGeoCoding;
+
+  return { data };
 };
 
 export default useGeo;
