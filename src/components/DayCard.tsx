@@ -22,10 +22,10 @@ const DayCard = ({ day, forecast, feelsLike, temp, icon }: Props) => {
         <p className="text-2xl">{forecast}</p>
       </div>
       <div className="flex justify-center mt-3">
-        <h2 className="text-5xl">{temp}</h2>
+        <h2 className="text-5xl">{temp.toFixed(0)}</h2>
       </div>
-      <div className="flex mt-5 text-slate-400">
-        <h2>It will feel like {feelsLike}</h2>
+      <div className="flex mt-5 justify-center text-slate-400">
+        <h2>It will feel like {feelsLike.toFixed(0)}</h2>
       </div>
     </article>
   );

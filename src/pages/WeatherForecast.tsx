@@ -1,22 +1,26 @@
 import DayCard from "@/components/DayCard";
 import useWeather from "@/hooks/useWeather";
 import useCurrentLocationStore from "@/state-management/location/store";
+import useUnitStore from "@/state-management/unit/store";
 import { LuSun } from "react-icons/lu";
 
 const WeatherForecast = () => {
   const { uniqueDays, isLoading, error } = useWeather();
   const { currentLocation } = useCurrentLocationStore();
+  const { currentUnit, setCurrentUnit } = useUnitStore();
 
   return (
     <>
       <div className="text-[500px] z-[-99] text-yellow-200 absolute top-[-100px] right-[-100px]">
         <LuSun />
       </div>
-      <section className="flex flex-col justify-center px-[100px] mt-[150px]">
+      <section className="flex flex-col justify-center px-[100px] mt-[100px]">
         <h1 className="text-slate-400 mb-10 text-5xl">
           Today there is{" "}
           {uniqueDays ? uniqueDays[0].weather[0].description : ""} in{" "}
-          {currentLocation?.name}, {currentLocation?.state}.
+          {currentLocation?.name}, {currentLocation?.state}. <br /> The current
+          temperature is {uniqueDays ? uniqueDays[0].main.temp.toFixed(0) : ""}°
+          {currentUnit === "imperial" ? "F" : "C"}.
         </h1>
         <article className="grid grid-cols-5 gap-x-3">
           {uniqueDays?.slice(1).map(
@@ -36,6 +40,18 @@ const WeatherForecast = () => {
             )
           )}
         </article>
+        <div className="flex items-center mt-10  justify-center">
+          <button
+            onClick={() => {
+              setCurrentUnit(
+                currentUnit === "imperial" ? "metric" : "imperial"
+              );
+            }}
+            className="shadow-md py-5 bg-white px-3 border-2 border-slate-400 rounded-md  text-slate-500 text-2xl"
+          >
+            Show in {currentUnit === "imperial" ? "Celsius" : "Fahrenheit"}
+          </button>
+        </div>
       </section>
     </>
   );
