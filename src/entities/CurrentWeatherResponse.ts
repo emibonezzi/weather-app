@@ -1,6 +1,6 @@
 import { CloudsData } from "./CloudsData";
 import { Coordinates } from "./Coordinates";
-import { Forecast } from "./Forecast";
+import { Forecast } from "./Summary";
 import { SysData } from "./SysData";
 import { WeatherData } from "./WeatherData";
 import { WindData } from "./WindData";

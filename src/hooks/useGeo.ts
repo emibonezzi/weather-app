@@ -1,7 +1,6 @@
 import { LocationData } from "@/entities/LocationData";
 import APIClient from "@/services/api-service";
 import useQueryStore from "@/state-management/query/store";
-import { sampleResponseGeoCoding } from "@/utils/sampleResponses";
 import { useQuery } from "@tanstack/react-query";
 import ms from "ms";
 const apiClient = new APIClient<LocationData[]>("/geo/1.0/direct");

@@ -1,11 +1,10 @@
 import { LocationData } from "@/entities/LocationData";
-import { LocationRequest } from "@/entities/LocationRequest";
 import { mountStoreDevtool } from "simple-zustand-devtools";
 import { create } from "zustand";
 
 interface LocationStore {
-  currentLocation: LocationRequest | undefined;
-  setCurrentLocation: (location: LocationRequest) => void;
+  currentLocation: LocationData | undefined;
+  setCurrentLocation: (location: LocationData) => void;
 }
 
 const useCurrentLocationStore = create<LocationStore>((set) => ({

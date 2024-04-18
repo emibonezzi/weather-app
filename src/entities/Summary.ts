@@ -1,4 +1,4 @@
-export interface Forecast {
+export interface Summary {
   id: number;
   main: string;
   description: string;
